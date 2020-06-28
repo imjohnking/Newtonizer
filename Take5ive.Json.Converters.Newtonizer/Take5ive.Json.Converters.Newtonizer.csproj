@@ -2,6 +2,13 @@
 
   <PropertyGroup>
 	  <PackageId>Take5ive.Json.Converters.Newtonizer</PackageId>
+	  <Title>Newtonizer Custom JSON Converter</Title>
+	  <Description>
+		  A custom JSON converter for use with .NET Core System.Text.Json serialization and deserialization. 
+		  Provides access to "internal" class properties as well as adds granular control over null value handling. 
+		  Works similar to Newtonsoft's JSON.NET library for these specific functions.
+	  </Description>
+	  <Summary>A custom JSON converter that provides access to "internal" class properties as well as adds granular control over null value handling.</Summary>
 	  <Version>1.0.0</Version>
 	  <Authors>John King</Authors>
 	  <Company>Take5ive Engineering and Consulting</Company>
@@ -9,8 +16,8 @@
 	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	  <Copyright>Copyright © John J King 2020</Copyright>
 	  <RepositoryType>git</RepositoryType>
-	  
-	  <RepositoryType>git</RepositoryType>
+	  <RepositoryUrl>https://github.com/imjohnking/Newtonizer</RepositoryUrl>
+	  <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Take5ive.Json.Converters</RootNamespace>
   </PropertyGroup>
