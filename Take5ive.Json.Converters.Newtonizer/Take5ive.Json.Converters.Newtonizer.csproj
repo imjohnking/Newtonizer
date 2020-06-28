@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <PackageId>Take5ive.Json.Converters.Newtonizer</PackageId>
+	  <Version>1.0.0</Version>
+	  <Authors>John King</Authors>
+	  <Company>Take5ive Engineering and Consulting</Company>
+	  <PackageTags>json; newtonsoft; newtonizer; serialization; deserialization;</PackageTags>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <Copyright>Copyright © John J King 2020</Copyright>
+	  <RepositoryType>git</RepositoryType>
+	  
+	  <RepositoryType>git</RepositoryType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Take5ive.Json.Converters</RootNamespace>
+  </PropertyGroup>
+
+</Project>
