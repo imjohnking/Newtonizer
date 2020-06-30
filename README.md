@@ -1,2 +1,2 @@
 # Newtonizer
-A custom JSON converter for use with .NET Core System.Text.Json serialization and deserialization.
+A custom JSON converter for use with .NET Core System.Text.Json serialization and deserialization. Provides access to "internal" class properties as well as adds granular control over null value handling. Works similar to Newtonsoft's JSON.NET library for these specific functions without having to use a third-party JSON library. Supports all other existing built-in System.Text.Json functionality.
