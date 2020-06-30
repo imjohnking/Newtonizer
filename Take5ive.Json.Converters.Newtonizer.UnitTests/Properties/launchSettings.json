@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Take5ive.Json.Converters.UnitTests": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

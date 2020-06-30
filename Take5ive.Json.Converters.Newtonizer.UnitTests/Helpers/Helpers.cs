@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using Take5ive.Json.Attributes;
 
-namespace Take5ive.Json.Converters
+namespace Take5ive.Json.Converters.UnitTests
 {
     internal static class Helpers
     {

@@ -55,7 +55,7 @@ namespace Take5ive.Json.Converters
                         throw new JsonException($"Expected token type to be PropertyName name instead of {reader.TokenType}");
                     }
 
-                    propertyName = reader.GetString(); 
+                    propertyName = reader.GetString();
 
                     try
                     {
@@ -72,7 +72,14 @@ namespace Take5ive.Json.Converters
                     }
 
                     // check to see if we should ignore this property
-                    if (IgnoreProperty(property, options)) continue;
+                    if (IgnoreProperty(property, options))
+                    {
+                        // force a read to get the value off the reader
+                        reader.Read();
+
+                        // do nothing with the value and continue
+                        continue;
+                    }
 
                     // if property is a nested object
                     if (property.PropertyType.IsNested)
@@ -193,7 +200,7 @@ namespace Take5ive.Json.Converters
                                 // write the value to the Json
                                 JsonSerializer.Serialize(writer, kvp.Value, options);
                             }
-                        } 
+                        }
                         else
                         {
                             var val = (Dictionary<string, JsonElement>)property.GetValue(objToSerialize);
@@ -239,8 +246,15 @@ namespace Take5ive.Json.Converters
                         continue;
                     }
 
+                    // if value is null and the property asks to be ignored when null via the JsonPropertyAttribute
+                    if (value == null && HasIgnoreNullValueAttribute(property))
+                    {
+                        // do not include this value in the serialization
+                        continue;
+                    }
+
                     // if value is null, should we handle it anyway or skip it?
-                    if (value == null && !HasAllowNullAttribute(property) && options.IgnoreNullValues)
+                    if (value == null && !HasIncludeNullAttribute(property) && options.IgnoreNullValues)
                     {
                         // do not include this value in the serialization
                         continue;
